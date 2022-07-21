@@ -1,15 +1,9 @@
-version: '3'
+version: '3.8'
 services:
-  database:
+  postgres:
+    container_name: trpc-cool
     image: postgres:latest
     ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: POSTGRES_USER
-      POSTGRES_PASSWORD: POSTGRES_PASSWORD
-      POSTGRES_DB: postgres
+      - 5432:5432
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-    restart: always
-    networks:
-      - backend
+      - postgres:/data/postgres
