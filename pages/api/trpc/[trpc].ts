@@ -8,7 +8,7 @@ export const appRouter = trpc.router().query('hello', {
   }).nullish(),
   resolve({ input }) {
     return {
-      greeting: `hello ${input?.text ?? 'world'}`,
+      greeting: `hello this is trpc query ${input?.text ?? 'world'}`,
     };
   },
 });
