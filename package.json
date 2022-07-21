@@ -27,6 +27,7 @@
     "@mantine/prism": "4.2.2",
     "@modulz/radix-icons": "^4.0.0",
     "@next/bundle-analyzer": "^12.1.4",
+    "@prisma/client": "4.1.0",
     "@trpc/client": "^9.26.2",
     "@trpc/next": "^9.26.2",
     "@trpc/react": "^9.26.2",

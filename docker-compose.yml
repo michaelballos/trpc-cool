@@ -1,9 +1,17 @@
 version: '3.8'
 services:
-  postgres:
-    container_name: trpc-cool
-    image: postgres:latest
+  dev-db:
+    image: postgres:14.1-alpine
+    restart: "no"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=initial_db
+    stop_signal: SIGTERM
     ports:
-      - 5432:5432
+      - '5434:5432'
     volumes:
-      - postgres:/data/postgres
+      - dev-db-data:/var/lib/postgresql/data
+volumes:
+  dev-db-data:
+    driver: local
